@@ -4,7 +4,7 @@ from numpy import append, NINF, Inf, ndarray
 
 def trunc(dist, size=1, lower=NINF, upper=Inf, ignore_warning=False):
     
-    if lower > upper:
+    if lower >= upper:
         raise ValueError('lower=' + str(lower) + ' must be less than upper=' 
                          + str(upper))
     
