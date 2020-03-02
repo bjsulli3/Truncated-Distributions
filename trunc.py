@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from numpy import random, append
-from scipy import stats
+from numpy import append, NINF, Inf
 
-
-def trunc(dist, size=1, lower=np.NINF, upper=np.Inf):
+def trunc(dist, size=1, lower=NINF, upper=Inf):
     stringDist = dist[0:-1] + ', size=' + str(size) + ')'
     x = eval(stringDist)
     
@@ -20,10 +18,9 @@ def trunc(dist, size=1, lower=np.NINF, upper=np.Inf):
         
         truncated = append(truncated, newTruncated)
     
-    truncated = truncated[0:size-1]
+    truncated = truncated[0:size]
         
     return truncated
 
-sample = trunc(size=10000, lower=15, upper=18, dist='stats.uniform.rvs(loc=10, scale=20)')
 
 
