@@ -7,6 +7,9 @@ def trunc(dist, size=1, lower=NINF, upper=Inf, ignore_warning=False):
     if lower > upper:
         raise ValueError('lower=' + str(lower) + ' must be less than upper=' +str(upper))
     
+    if isinstance(size, int) == False:
+        raise ValueError('size must be an integer')
+    
     stringDist = dist[0:-1] + ', size=' + str(size) + ')'
     x = eval(stringDist)
     
@@ -32,6 +35,4 @@ def trunc(dist, size=1, lower=NINF, upper=Inf, ignore_warning=False):
         
     return truncated
 
-trunc('scipy.stats.uniform.rvs(loc=10, scale=10)', lower=23, upper=22, size=1000)
-
-scipy.stats.uniform.rvs(loc=10, scale=10)
+trunc('scipy.stats.uniform.rvs(loc=10, scale=11)', lower=21, upper=22, size=1000)
