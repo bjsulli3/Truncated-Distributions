@@ -1,6 +1,6 @@
 # Truncated-Distributions
 
-This repository contains an easy to function to sample from truncated distributions in Python. This functionality is well supported in the R and Julia ecosystem, but I have found Python implementations lacking. This function supports the APIs found in numpy.random and scipy.stats.
+This repository contains an easy to use function to sample from truncated distributions in Python. This functionality is well supported in the R and Julia ecosystems, but I have found the Python implementations lacking. This function supports the APIs found in numpy.random and scipy.stats.
 
 The `trunc()` function takes four arguments:
   
@@ -8,6 +8,7 @@ The `trunc()` function takes four arguments:
   - `lower=np.NINF` / optional, the lower bound to sample within
   - `upper=np.Inf` / optional, the upper bound to sample within
   - `size=1` / optional, the number of samples to take
+  - `ignore_warning=False` / optional, ignores warning if sampling takes over 10000 iterations if True
   
 ## Examples:
 
