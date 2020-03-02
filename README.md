@@ -8,6 +8,7 @@ The `trunc()` function takes four arguments:
   - `lower=np.NINF` / optional, the lower bound to sample within
   - `upper=np.Inf` / optional, the upper bound to sample within
   - `size=1` / optional, the number of samples to take
+  - `ignore_warning=False` / optional, ignores warning if sampling takes over 10000 iterations if True
   
 ## Examples:
 
