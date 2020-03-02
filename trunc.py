@@ -35,4 +35,4 @@ def trunc(dist, size=1, lower=NINF, upper=Inf, ignore_warning=False):
         
     return truncated
 
-trunc('scipy.stats.uniform.rvs(loc=10, scale=11)', lower=21, upper=22, size=1000)
+#trunc('scipy.stats.uniform.rvs(loc=10, scale=11)', lower=21, upper=22, size=1000)
