@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from numpy import append, NINF, Inf, ndarray
+from numpy import append, Inf, ndarray
 
-def trunc(dist, size=1, lower=NINF, upper=Inf, ignore_warning=False):
+def trunc(dist, size=1, lower=-Inf, upper=Inf, ignore_warning=False):
     
     if lower >= upper:
         raise ValueError('lower=' + str(lower) + ' must be less than upper=' 
@@ -16,7 +16,7 @@ def trunc(dist, size=1, lower=NINF, upper=Inf, ignore_warning=False):
         raise ValueError('the size parameter cannot be specified in the dist '
                          'parameter')
     
-    stringDist = dist[0:-1] + ', size=' + str(size) + ')'
+    stringDist = dist[0:-1] + ', size=' + str(int(size*8)) + ')'
     x = eval(stringDist)
     
     oob = (x < lower) | (x > upper) == False  #boolean array in bounds elements
@@ -43,6 +43,6 @@ def trunc(dist, size=1, lower=NINF, upper=Inf, ignore_warning=False):
         
     return truncated
 
-#trunc('scipy.stats.uniform.rvs(loc=10, scale=10)', lower=21, upper=22, size=10000)
+%time trunc('scipy.stats.uniform.rvs(loc=10, scale=15)', lower=21, upper=22, size=1000000)
 
 
